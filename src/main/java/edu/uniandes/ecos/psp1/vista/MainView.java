@@ -27,15 +27,16 @@ public class MainView {
         PrintWriter pw = resp.getWriter();
         pw.write("<html>");
         pw.println("<h1>PSP1 Programa que calcula Regresión lineal y "
-                + "Coeficiente de varición</h1><br>");
-        pw.println("<p>ECOS 2015 <br>Deivid Alexander Osorio Barrera</p><br><br>");
+                + "Coeficiente de varición</h1>");
+        pw.println("<p>ECOS 2015 <br>Deivid Alexander Osorio Barrera</p><br>");
         
-        pw.write("<p> Ingrese los valores X y Y de cada punto separados por un"
-                + "coma (,) y cada punto separado por guion (-)</p> \n");
+        pw.write("<p> Ingrese los valores X y Y de cada punto separados por una"
+                + "coma (,) y cada punto separado por guion (-), cada punto debe"
+                + "tener su respectivo valor en x y su valor en y.</p> \n");
         pw.write("<form action=\"calc\" method=\"post\"> \n"
-                + "    Puntos(x,y): <input type=\"text\" size=\"35\" name=\"puntos\"><br>\n"
-                + "    Xk: <input type=\"text\" value=\"386\" name=\"xk\">\n"
-                + "    <input type=\"submit\" value=\"Puntos\"> </form> ");
+                + "    Puntos(x,y): <input type=\"text\" size=\"45\" name=\"puntos\"><br>\n"
+                + "    Xk: <input type=\"text\" value=\"386\" name=\"xk\"> <br>\n"
+                + "    <input type=\"submit\" value=\"Calcular\"> </form> ");
         pw.write("</html>");
 
     }
@@ -46,10 +47,10 @@ public class MainView {
         
         DecimalFormat formatter = new DecimalFormat("#0.0000");
         resp.getWriter().println("<br><hr>");
-        resp.getWriter().println("<h2>Resultados<h2>");
+        resp.getWriter().println("<h2>Resultados</h2>");
         resp.getWriter().println("<b>Valor B0 :</b>   " + formatter.format(b0) + "<br>");
         resp.getWriter().println("<b>Valor B1 :</b>   " + formatter.format(b1) + "<br>");
-        resp.getWriter().println("<b>Valor R2 : </b>  " + formatter.format(r2) + "<br>");
+        resp.getWriter().println("<b>Valor R2 :</b>   " + formatter.format(r2) + "<br>");
         resp.getWriter().println("<b>Valor Rxy: </b>  " + formatter.format(rxy) + "<br>");
         resp.getWriter().println("<b>Predicción: </b> " + formatter.format(yk) + "<br>");
     }
