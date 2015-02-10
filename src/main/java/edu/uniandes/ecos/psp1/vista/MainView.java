@@ -28,14 +28,14 @@ public class MainView {
         pw.write("<html>");
         pw.println("<h1>PSP1 Programa que calcula Regresión lineal y "
                 + "Coeficiente de varición</h1>");
-        pw.println("<p>ECOS 2015 <br>Deivid Alexander Osorio Barrera</p><br>");
+        pw.println("<p>ECOS 2015 <br>Deivid Alexander Osorio Barrera</p>");
         
         pw.write("<p> Ingrese los valores X y Y de cada punto separados por una"
                 + "coma (,) y cada punto separado por guion (-), cada punto debe"
                 + "tener su respectivo valor en x y su valor en y.</p> \n");
         pw.write("<form action=\"calc\" method=\"post\"> \n"
                 + "    Puntos(x,y): <input type=\"text\" size=\"45\" name=\"puntos\"><br>\n"
-                + "    Xk: <input type=\"text\" value=\"386\" name=\"xk\"> <br>\n"
+                + "    Xk:          <input type=\"text\" value=\"386\" name=\"xk\"> <br>\n"
                 + "    <input type=\"submit\" value=\"Calcular\"> </form> ");
         pw.write("</html>");
 
