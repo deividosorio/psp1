@@ -45,7 +45,7 @@ public class App extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         MainView.showHome(req,resp);
-        MainView.showResults(req,resp,0,0,0,0);       
+        MainView.showResults(req,resp,0,0,0,0,0);       
     }
 
     @Override
@@ -89,7 +89,8 @@ public class App extends HttpServlet{
         ListaPuntos datosPuntos = new ListaPuntos(puntosList);
         
         MainView.showResults(req, resp, datosPuntos.getB0(),
-                datosPuntos.getB1(), datosPuntos.getR2(), datosPuntos.getYk(strXk));
+                datosPuntos.getB1(), datosPuntos.getR2(), datosPuntos.getRXY(),
+                datosPuntos.getYk(strXk));
     }
    
 }
