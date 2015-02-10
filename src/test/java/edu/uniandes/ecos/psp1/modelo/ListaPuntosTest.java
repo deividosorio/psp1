@@ -7,15 +7,12 @@ package edu.uniandes.ecos.psp1.modelo;
 
 import java.util.ArrayList;
 import junit.framework.TestCase;
-import java.text.DecimalFormat;
 
 /**
  *
  * @author deividosorio
  */
 public class ListaPuntosTest extends TestCase {
-
-    DecimalFormat formatter = new DecimalFormat("#0.0000");
 
     public ListaPuntosTest(String testName) {
         super(testName);
