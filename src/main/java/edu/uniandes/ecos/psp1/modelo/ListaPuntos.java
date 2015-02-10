@@ -5,7 +5,6 @@
  */
 package edu.uniandes.ecos.psp1.modelo;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -26,9 +25,8 @@ public class ListaPuntos {
     private ArrayList<Punto> _listaPuntos;
     private double xy, x2, y2;
     private double sumX, sumY, avgX, avgY;
-    private double b0, b1, r2, rxy;
+    private double b0, b1, r2, rxy, yk;
     private Utilidades util = new Utilidades();
-    DecimalFormat formatter = new DecimalFormat("#0.0000");  
 
     // -----------------------------------------------------------------
     // Constructores
@@ -44,6 +42,7 @@ public class ListaPuntos {
         b1 = 0;
         r2 = 0;
         rxy = 0;
+        yk = 0;
     }
 
     // -----------------------------------------------------------------
@@ -114,6 +113,19 @@ public class ListaPuntos {
 
         rxy = num / (Math.sqrt(den1 * den2));
         return rxy;
+    }
+    
+    /**
+     * Método que devuelve el B1
+     *
+     * @return El número B1
+     */
+    public double getYk(double xk) {
+        if (yk != 0) {
+            return yk;
+        }
+        yk = getB0() + (getB1() * xk);
+        return yk;
     }
 
     /**

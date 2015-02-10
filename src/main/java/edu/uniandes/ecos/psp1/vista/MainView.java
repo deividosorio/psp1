@@ -5,7 +5,6 @@
  */
 package edu.uniandes.ecos.psp1.vista;
 
-import edu.uniandes.ecos.psp1.modelo.ListaPuntos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -33,16 +32,19 @@ public class MainView {
                 + "coma (,) y cada punto separado por guion (-)</p> \n");
         pw.write("<form action=\"calc\" method=\"post\"> \n"
                 + "    Puntos(x,y): <input type=\"text\" name=\"puntos\">\n"
+                + "    Xk: <input type=\"text\" value=\"386\" name=\"xk\">\n"
                 + "    <input type=\"submit\" value=\"Puntos\"> </form> ");
         pw.write("</html>");
 
     }
 
-    public static void showResults(HttpServletRequest req, HttpServletResponse resp, double b0, double b1, double r2 )
+    public static void showResults(HttpServletRequest req, HttpServletResponse resp, 
+            double b0, double b1, double r2, double yk )
             throws ServletException, IOException {
         resp.getWriter().println("<b>Lista de puntos ingresado:</b> " + b0 + "<br>");
         resp.getWriter().println("<b>Regresión Lineal:</b> " + b1 + "<br>");
         resp.getWriter().println("<b>Coeficiente de Variación: </b> " + r2 + "<br>");
+        resp.getWriter().println("<b>Predicción: </b> " + yk + "<br>");
     }
 
     public static void error(HttpServletRequest req, HttpServletResponse resp)
